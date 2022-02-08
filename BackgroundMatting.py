@@ -132,7 +132,7 @@ class ThreadedBackgroundMatter(QThread):
                 frame, (self.capture.height, self.capture.width))
 
             # Apply background bluring
-            frame = pha * fgr  # + (1 - pha) * frame
+            frame = pha * fgr + (1 - pha) * frame
 
             # Convert to np array of bytes
             frame = frame.squeeze(0).permute((1, 2, 0)).cpu().numpy()
